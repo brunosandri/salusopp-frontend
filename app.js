@@ -7,7 +7,7 @@ async function login() {
   const password = document.getElementById("password").value;
 
   try {
-    const res = await fetch("http://localhost:5000/login", {
+    const res = await fetch("https://salusopp-backend.railway.internal", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password }),
