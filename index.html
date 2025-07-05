@@ -3,38 +3,128 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Painel do Investidor - Salus//Opp</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salus//Opp - Acesso ao Investidor</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="logo.png" type="image/png">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9fafb;
+      color: #333;
+    }
+    header {
+      background-color: #0d47a1;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    header img {
+      max-width: 100px;
+      margin-bottom: 10px;
+    }
+    .container {
+      max-width: 500px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+    h2 {
+      margin-bottom: 10px;
+    }
+    input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+    button {
+      background-color: #0d47a1;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      width: 100%;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #08306b;
+    }
+    .info {
+      font-size: 14px;
+      margin-top: 20px;
+      color: #666;
+      text-align: center;
+    }
+    footer {
+      text-align: center;
+      font-size: 13px;
+      color: #999;
+      padding: 20px;
+    }
+    footer a {
+      color: #999;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding: 30px 10px;
+      }
+      .container {
+        margin: 20px;
+        padding: 20px;
+      }
+      h1 {
+        font-size: 24px;
+      }
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <img src="logo.png" alt="Logo Salus//Opp">
+    <h1>Salus//Opp</h1>
+    <p>Portal exclusivo para investidores acompanharem seus ativos em obras residenciais nos EUA.</p>
+  </header>
+
   <div class="container">
-    <header>
-      <h1>Painel do Investidor</h1>
-      <button id="sair" onclick="location.reload()">Sair</button>
-    </header>
+    <h2>Acesso ao Investidor</h2>
+    <p>Faça login com seu e-mail para visualizar seus NFTs, acompanhar o andamento da obra e acessar seus documentos exclusivos.</p>
 
-    <div id="login">
-      <input type="email" id="email" placeholder="E-mail" required>
-      <input type="password" id="password" placeholder="Senha" required>
-      <button onclick="login()">Entrar</button>
-      <div id="loginError" class="erro"></div>
-    </div>
+    <input type="email" id="email" placeholder="Seu e-mail">
+    <input type="password" id="password" placeholder="Senha">
+    <button onclick="login()">Entrar</button>
+    <p id="loginError" style="color:red;"></p>
 
-    <div id="painel" style="display:none;">
-      <section id="nfts">
-        <h2>Seus NFTs:</h2>
-      </section>
-
-      <section id="obra">
-        <h2>Andamento da Obra:</h2>
-      </section>
-
-      <section id="docs">
-        <h2>Documentos:</h2>
-      </section>
+    <div class="info">
+      <p>Ao acessar, você concorda com os <a href="#">Termos de Uso</a> e nossa <a href="#">Política de Privacidade</a>.</p>
     </div>
   </div>
 
-  <script src="app.js"></script>
+  <footer>
+    <p>&copy; 2025 Salus//Opp Inc. | CNPJ: 00.000.000/0001-00</p>
+    <p>Ambiente seguro | Dados protegidos por criptografia | Acesso restrito</p>
+  </footer>
+
+  <script>
+    function login() {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+      console.log("Login enviado:", email, password);
+      // lógica de autenticação virá aqui
+    }
+  </script>
 </body>
 </html>
