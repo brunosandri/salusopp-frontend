@@ -7,7 +7,7 @@ async function login() {
   const password = document.getElementById("password").value;
 
   try {
-    const res = await fetch("https://salusopp-backend.up.railway.app/login", {
+    const res = await fetch("https://salusopp-backend-production.up.railway.app/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password }),
@@ -32,7 +32,7 @@ async function login() {
 }
 
 async function carregarNFTs() {
-  const res = await fetch("http://localhost:5000/nfts");
+  const res = await fetch("https://salusopp-backend-production.up.railway.app/nfts");
   const nfts = await res.json();
   const div = document.getElementById("nfts");
   nfts.forEach(nft => {
@@ -41,7 +41,7 @@ async function carregarNFTs() {
 }
 
 async function carregarObra() {
-  const res = await fetch("http://localhost:5000/obra");
+  const res = await fetch("https://salusopp-backend-production.up.railway.app/obra");
   const etapas = await res.json();
   const div = document.getElementById("obra");
   etapas.forEach(etapa => {
@@ -56,7 +56,7 @@ async function carregarObra() {
 }
 
 async function carregarDocumentos() {
-  const res = await fetch(`http://localhost:5000/documentos/${userId}`);
+  const res = await fetch(`https://salusopp-backend-production.up.railway.app/documentos/${userId}`);
   const docs = await res.json();
   const div = document.getElementById("docs");
   if (docs.length === 0) {
