@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Painel do Investidor - Salus//Opp</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Painel do Investidor</h1>
+      <button id="sair" onclick="location.reload()">Sair</button>
+    </header>
+
+    <div id="login">
+      <input type="email" id="email" placeholder="E-mail" required>
+      <input type="password" id="password" placeholder="Senha" required>
+      <button onclick="login()">Entrar</button>
+      <div id="loginError" class="erro"></div>
+    </div>
+
+    <div id="painel" style="display:none;">
+      <section id="nfts">
+        <h2>Seus NFTs:</h2>
+      </section>
+
+      <section id="obra">
+        <h2>Andamento da Obra:</h2>
+      </section>
+
+      <section id="docs">
+        <h2>Documentos:</h2>
+      </section>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
