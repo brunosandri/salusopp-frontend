@@ -78,17 +78,25 @@
 
     /* --------- Funções --------- */
     async function carregarNFTs() {
-      const res = await fetch(baseURL + "/nfts");
-      const nfts = await res.json();
-      const container = document.getElementById("nftContainer");
-      container.innerHTML = "";
-      nfts.forEach((nft) => {
-        container.innerHTML += `
-          <div class="card">
-            NFT #${nft.tokenId} - Participação: ${nft.participacao}
-          </div>`;
-      });
-    }
+  const emailLogado = localStorage.getItem("email");         // pega o e-mail salvo no login
+  const res = await fetch(
+    BASE_URL + "/nfts/" + encodeURIComponent(emailLogado)    // chama rota /nfts/<email>
+  );
+  const nfts = await res.json();
+
+  const container = document.getElementById("nftContainer");
+  container.innerHTML = "";
+  if (nfts.length === 0) {
+    container.innerHTML = "<p>Você ainda não possui NFTs vinculados.</p>";
+    return;
+  }
+  nfts.forEach((nft) => {
+    container.innerHTML += `
+      <div class="card">
+        NFT #${nft.tokenId} — Participação: ${nft.participacao}
+      </div>`;
+  });
+}
 
     async function carregarObra() {
       const res = await fetch(baseURL + "/obra");
