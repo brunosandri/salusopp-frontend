@@ -67,3 +67,5 @@ async function carregarDocumentos() {
     div.innerHTML += `<div class="card"><a href="${doc.url}" target="_blank">${doc.nome}</a></div>`;
   });
 }
+
+<script src="app.js"></script>
