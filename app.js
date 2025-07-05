@@ -54,7 +54,7 @@ async function carregarNFTs() {
 async function carregarObra() {
   const res = await fetch(BASE_URL + "/obra");
   const etapas = await res.json();
-  const div = document.getElementById("obra");
+  const div = document.getElementById("obraContainer");
   div.innerHTML = "";
   etapas.forEach(etapa => {
     div.innerHTML += `
@@ -70,7 +70,7 @@ async function carregarDocumentos() {
   const email = localStorage.getItem("email");  // usa o email salvo
   const res = await fetch(BASE_URL + "/documentos/" + encodeURIComponent(email));
   const docs = await res.json();
-  const div = document.getElementById("docs");
+  const div = document.getElementById("docsContainer");
   div.innerHTML = "";
   if (docs.length === 0) {
     div.innerHTML = "<p>Nenhum documento disponível.</p>";

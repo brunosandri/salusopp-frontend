@@ -65,78 +65,75 @@
   </section>
 
   <script>
-    /* --------- Config --------- */
-    const token     = localStorage.getItem("token");
-    const userEmail = localStorage.getItem("email") || "user@example.com";
-    const baseURL   = "https://salusopp-backend-production.up.railway.app";
+  /* --------- Config --------- */
+  const BASE_URL = "https://salusopp-backend-production.up.railway.app";
+  const token    = localStorage.getItem("token");
+  const userEmail = localStorage.getItem("email") || "user@example.com";
 
-    /* --------- Proteção de acesso --------- */
-    if (!token) {
-      alert("Acesso não autorizado. Faça login novamente.");
-      window.location.href = "index.html";
-    }
-
-    /* --------- Funções --------- */
-    async function carregarNFTs() {
-  const emailLogado = localStorage.getItem("email");         // pega o e-mail salvo no login
-  const res = await fetch(
-    BASE_URL + "/nfts/" + encodeURIComponent(emailLogado)    // chama rota /nfts/<email>
-  );
-  const nfts = await res.json();
-
-  const container = document.getElementById("nftContainer");
-  container.innerHTML = "";
-  if (nfts.length === 0) {
-    container.innerHTML = "<p>Você ainda não possui NFTs vinculados.</p>";
-    return;
+  /* --------- Proteção de acesso --------- */
+  if (!token) {
+    alert("Acesso não autorizado. Faça login novamente.");
+    window.location.href = "index.html";
   }
-  nfts.forEach((nft) => {
-    container.innerHTML += `
-      <div class="card">
-        NFT #${nft.tokenId} — Participação: ${nft.participacao}
-      </div>`;
-  });
-}
 
-    async function carregarObra() {
-      const res = await fetch(baseURL + "/obra");
-      const etapas = await res.json();
-      const container = document.getElementById("obraContainer");
-      container.innerHTML = "";
-      etapas.forEach((etapa) => {
-        container.innerHTML += `
-          <div class="card">
-            <strong>${etapa.titulo}</strong><br>
-            ${etapa.descricao}
-            ${etapa.imagem ? `<img src="${etapa.imagem}" />` : ""}
-          </div>`;
-      });
+  /* --------- Funções --------- */
+  async function carregarNFTs() {
+    const emailLogado = localStorage.getItem("email");
+    const res  = await fetch(BASE_URL + "/nfts/" + encodeURIComponent(emailLogado));
+    const nfts = await res.json();
+
+    const container = document.getElementById("nftContainer");
+    container.innerHTML = "";
+    if (nfts.length === 0) {
+      container.innerHTML = "<p>Você ainda não possui NFTs vinculados.</p>";
+      return;
     }
+    nfts.forEach((nft) => {
+      container.innerHTML += `
+        <div class="card">
+          NFT #${nft.tokenId} — Participação: ${nft.participacao}
+        </div>`;
+    });
+  }
 
-    async function carregarDocumentos() {
-      const res = await fetch(
-        baseURL + "/documentos/" + encodeURIComponent(userEmail)
-      );
-      const docs = await res.json();
-      const container = document.getElementById("docsContainer");
-      container.innerHTML = "";
-      if (docs.length === 0) {
-        container.innerHTML = "<p>Nenhum documento encontrado.</p>";
-        return;
-      }
-      docs.forEach((doc) => {
-        container.innerHTML += `
-          <div class="card">
-            <a href="${doc.url}" target="_blank">${doc.nome}</a>
-          </div>`;
-      });
+  async function carregarObra() {
+    const res = await fetch(BASE_URL + "/obra");
+    const etapas = await res.json();
+    const container = document.getElementById("obraContainer");
+    container.innerHTML = "";
+    etapas.forEach((etapa) => {
+      container.innerHTML += `
+        <div class="card">
+          <strong>${etapa.titulo}</strong><br>
+          ${etapa.descricao}
+          ${etapa.imagem ? `<img src="${etapa.imagem}" />` : ""}
+        </div>`;
+    });
+  }
+
+  async function carregarDocumentos() {
+    const res = await fetch(BASE_URL + "/documentos/" + encodeURIComponent(userEmail));
+    const docs = await res.json();
+    const container = document.getElementById("docsContainer");
+    container.innerHTML = "";
+    if (docs.length === 0) {
+      container.innerHTML = "<p>Nenhum documento encontrado.</p>";
+      return;
     }
+    docs.forEach((doc) => {
+      container.innerHTML += `
+        <div class="card">
+          <a href="${doc.url}" target="_blank">${doc.nome}</a>
+        </div>`;
+    });
+  }
 
-    /* --------- Execução inicial --------- */
-    carregarNFTs();
-    carregarObra();
-    carregarDocumentos();
-  </script>
+  /* --------- Execução inicial --------- */
+  carregarNFTs();
+  carregarObra();
+  carregarDocumentos();
+</script>
+
 </body>
 </html>
 
