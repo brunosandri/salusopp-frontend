@@ -33,15 +33,20 @@ async function login() {
 
 /* ---------- FUNÇÕES DO PAINEL ---------- */
 async function carregarNFTs() {
-  const res = await fetch(BASE_URL + "/nfts");
-  const nfts = await res.json();
-  const div = document.getElementById("nfts");
-  div.innerHTML = "";                          // limpa antes de inserir
-  nfts.forEach(nft => {
+  const email = localStorage.getItem("email");          // ← pega o email logado
+  const res   = await fetch(BASE_URL + "/nfts/" + encodeURIComponent(email));
+  const nfts  = await res.json();
+
+  const div = document.getElementById("nftContainer");
+  div.innerHTML = "";
+  if (nfts.length === 0) {
+    div.innerHTML = "<p>Você ainda não possui NFTs vinculados.</p>";
+    return;
+  }
+  nfts.forEach((nft) => {
     div.innerHTML += `
       <div class="card">
-        NFT #${nft.tokenId}<br>
-        Participação: ${nft.participacao}
+        NFT #${nft.tokenId} — Participação: ${nft.participacao}
       </div>`;
   });
 }
