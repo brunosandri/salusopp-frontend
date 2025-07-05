@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -102,9 +101,12 @@
     <h2>Acesso do Investidor</h2>
     <p>Faça login com seu e-mail para visualizar seus ativos, acompanhar o andamento de seus projetos e acessar seus documentos exclusivos.</p>
 
-    <input type="email" id="email" placeholder="Seu e-mail">
-    <input type="password" id="password" placeholder="Senha">
-    <button type="button" onclick="login()">Entrar</button>
+    <form onsubmit="event.preventDefault(); login();">
+      <input type="email" id="email" placeholder="Seu e-mail" required>
+      <input type="password" id="password" placeholder="Senha" required>
+      <button type="submit">Entrar</button>
+    </form>
+
     <p id="loginError" style="color:red;"></p>
 
     <div class="info">
