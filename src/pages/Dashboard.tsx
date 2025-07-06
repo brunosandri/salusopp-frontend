@@ -25,24 +25,31 @@ type Documento = {
 
 const Dashboard = () => {
   const navigate = useNavigate();
+  const [email, setEmail] = useState<string | null>(null);
+  const [token, setToken] = useState<string | null>(null);
   const [isNFTModalOpen, setIsNFTModalOpen] = useState(false);
 
   const [nfts, setNFTs] = useState<NFT[]>([]);
   const [etapas, setEtapas] = useState<Etapa[]>([]);
   const [documentos, setDocumentos] = useState<Documento[]>([]);
 
-  const email = localStorage.getItem("email");
-  const token = localStorage.getItem("token");
-  const BASE_URL = "https://salusopp-backend-production.up.railway.app";
+  const BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
 
-  // Proteção da rota
+  // Proteção da rota + leitura segura do localStorage
   useEffect(() => {
-    if (!token || !email) {
-      navigate("/");
-    }
-  }, [token, email, navigate]);
+    const storedEmail = localStorage.getItem("email");
+    const storedToken = localStorage.getItem("token");
 
-  // Carrega dados reais
+    if (!storedEmail || !storedToken) {
+      navigate("/");
+      return;
+    }
+
+    setEmail(storedEmail);
+    setToken(storedToken);
+  }, [navigate]);
+
+  // Carrega os dados após o email estar disponível
   useEffect(() => {
     if (!email) return;
 
@@ -60,12 +67,21 @@ const Dashboard = () => {
       .then((res) => res.json())
       .then(setDocumentos)
       .catch(console.error);
-  }, [email]);
+  }, [email, BASE_URL]);
 
   const handleLogout = () => {
     localStorage.clear();
     navigate("/");
   };
+
+  // Evita renderização antes de carregar localStorage
+  if (!email || !token) {
+    return (
+      <div className="min-h-screen flex items-center justify-center text-gray-500">
+        Carregando painel...
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
@@ -138,7 +154,7 @@ const Dashboard = () => {
         </div>
       </main>
 
-      {/* Modal */}
+      {/* Modal de vinculação de NFT */}
       <NFTLinkModal
         isOpen={isNFTModalOpen}
         onClose={() => setIsNFTModalOpen(false)}
@@ -148,3 +164,4 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
+
