@@ -126,7 +126,7 @@ const Dashboard = () => {
                 key={nft.tokenId}
                 tokenId={nft.tokenId}
                 participacao={nft.participacao}
-                imagem={`/nfts/nft-${nft.tokenId}.png`}
+                imagem={`https://magnificent-kleicha-fde726.netlify.app/imagens/nftimagem.jpg`}
                 smartContractUrl="https://gold-pawpaw-0be.notion.site/SalusOppNFT-sol-229f529207c280d28ae4ca3bed602762?source=copy_link"
               />
             ))}
