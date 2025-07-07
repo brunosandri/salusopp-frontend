@@ -4,8 +4,11 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 const ProjectTimeline = () => {
   const phases = [
     { id: 1, completed: true },
-    { id: 2, completed: false },
-    { id: 3, completed: false }
+    { id: 2, completed: true },
+    { id: 3, completed: false },
+    { id: 4, completed: false },
+    { id: 5, completed: false },
+    { id: 6, completed: false }
   ];
 
   return (

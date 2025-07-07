@@ -67,7 +67,7 @@ const ModernProjectInfo = () => {
             </div>
             <h4 className="font-semibold text-gray-700 mb-1">Status do Projeto</h4>
             <p className="text-xl font-bold text-purple-600">Em Andamento</p>
-            <p className="text-sm text-gray-600 mt-1">Fase 1 de 3</p>
+            <p className="text-sm text-gray-600 mt-1">Fase 2 de 6</p>
           </div>
         </div>
 

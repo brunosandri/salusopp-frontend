@@ -5,7 +5,7 @@ const ProjectInfo = () => {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Casa na Flórida — Fase 1</CardTitle>
+        <CardTitle>Casa na Flórida — Fase 2</CardTitle>
       </CardHeader>
       <CardContent>
         <div className="grid grid-cols-2 gap-8">

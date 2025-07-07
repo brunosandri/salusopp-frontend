@@ -1,10 +1,10 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { CheckCircle, Clock, Hammer } from "lucide-react";
+import { CheckCircle, Hammer } from "lucide-react";
 
 type Etapa = {
   titulo: string;
   descricao: string;
-  imagem?: string;
+  progresso?: number; // ← novo campo
 };
 
 type Props = {
@@ -39,14 +39,21 @@ const ModernProjectTimeline = ({ etapas }: Props) => {
                 </h4>
                 <p className="text-sm text-gray-600 mt-1">{etapa.descricao}</p>
               </div>
-              {etapa.imagem && (
-                <img
-                  src={etapa.imagem}
-                  alt={etapa.titulo}
-                  className="w-24 h-16 object-cover rounded-md shadow"
-                />
-              )}
             </div>
+
+            {typeof etapa.progresso === "number" && (
+              <div className="mt-3">
+                <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
+                  <div
+                    className="h-full bg-green-500 transition-all duration-500"
+                    style={{ width: `${etapa.progresso}%` }}
+                  />
+                </div>
+                <p className="text-right text-xs text-gray-500 mt-1">
+                  {etapa.progresso}%
+                </p>
+              </div>
+            )}
           </div>
         ))}
       </CardContent>
