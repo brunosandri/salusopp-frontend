@@ -1,61 +1,143 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { CheckCircle, Hammer } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Camera, CheckCircle2, Clock, MapPin } from "lucide-react";
 
-type Etapa = {
-  titulo: string;
-  descricao: string;
-  progresso?: number; // ← novo campo
-};
+const ModernProjectTimeline = () => {
+  const phases = [
+    { 
+      id: 1, 
+      completed: true, 
+      title: "Fundação",
+      description: "Preparação do terreno e fundação",
+      date: "Jan 2024",
+      progress: 100
+    },
+    { 
+      id: 2, 
+      completed: true, 
+      title: "Estrutura",
+      description: "Construção da estrutura principal",
+      date: "Mar 2024",
+      progress: 85
+    },
+    { 
+      id: 3, 
+      completed: false, 
+      title: "Acabamento",
+      description: "Acabamentos e detalhes finais",
+      date: "Jun 2024",
+      progress: 25
+    }
+  ];
 
-type Props = {
-  etapas: Etapa[];
-};
+  const photos = [
+    { title: "Fundação Concluída", progress: 100, color: "from-green-400 to-green-600" },
+    { title: "Estrutura em Andamento", progress: 85, color: "from-blue-400 to-blue-600" },
+    { title: "Acabamento Inicial", progress: 25, color: "from-orange-400 to-orange-600" }
+  ];
 
-const ModernProjectTimeline = ({ etapas }: Props) => {
   return (
-    <Card className="shadow-lg border-0">
-      <CardHeader className="bg-gradient-to-r from-indigo-600 to-blue-600 text-white">
+    <Card className="bg-white shadow-xl border-0">
+      <CardHeader className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
         <CardTitle className="flex items-center space-x-2">
-          <Hammer className="w-6 h-6" />
-          <span>Andamento da Obra</span>
+          <MapPin className="w-6 h-6" />
+          <span>Acompanhamento da Obra</span>
         </CardTitle>
       </CardHeader>
-
-      <CardContent className="space-y-6 p-6">
-        {etapas.length === 0 && (
-          <p className="text-gray-500 text-sm">Nenhuma etapa cadastrada.</p>
-        )}
-
-        {etapas.map((etapa, index) => (
-          <div
-            key={index}
-            className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md transition-all"
-          >
-            <div className="flex justify-between items-start mb-2">
-              <div>
-                <h4 className="text-lg font-semibold text-gray-800 flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-green-500" />
-                  {etapa.titulo}
-                </h4>
-                <p className="text-sm text-gray-600 mt-1">{etapa.descricao}</p>
+      
+      <CardContent className="p-6">
+        {/* Modern Timeline */}
+        <div className="space-y-6 mb-8">
+          {phases.map((phase, index) => (
+            <div key={phase.id} className="flex items-start space-x-4">
+              <div className="flex flex-col items-center">
+                <div className={`w-10 h-10 rounded-full border-2 flex items-center justify-center ${
+                  phase.completed 
+                    ? 'bg-green-500 border-green-500 text-white' 
+                    : phase.progress > 0
+                    ? 'bg-blue-500 border-blue-500 text-white'
+                    : 'border-gray-300 bg-white text-gray-400'
+                }`}>
+                  {phase.completed ? (
+                    <CheckCircle2 className="w-5 h-5" />
+                  ) : phase.progress > 0 ? (
+                    <Clock className="w-5 h-5" />
+                  ) : (
+                    <span className="text-sm font-bold">{phase.id}</span>
+                  )}
+                </div>
+                {index < phases.length - 1 && (
+                  <div className={`w-0.5 h-16 mt-2 ${
+                    phase.completed ? 'bg-green-500' : 'bg-gray-200'
+                  }`}></div>
+                )}
+              </div>
+              
+              <div className="flex-1 pb-8">
+                <div className="flex items-center justify-between mb-2">
+                  <h3 className="text-lg font-semibold text-gray-900">{phase.title}</h3>
+                  <span className="text-sm text-gray-500">{phase.date}</span>
+                </div>
+                <p className="text-gray-600 mb-3">{phase.description}</p>
+                
+                {/* Progress Bar */}
+                <div className="w-full bg-gray-200 rounded-full h-2">
+                  <div 
+                    className={`h-2 rounded-full transition-all duration-500 ${
+                      phase.completed 
+                        ? 'bg-gradient-to-r from-green-400 to-green-600'
+                        : phase.progress > 0
+                        ? 'bg-gradient-to-r from-blue-400 to-blue-600'
+                        : 'bg-gray-300'
+                    }`}
+                    style={{ width: `${phase.progress}%` }}
+                  ></div>
+                </div>
+                <div className="flex justify-between items-center mt-1">
+                  <span className="text-sm text-gray-500">Progresso</span>
+                  <span className="text-sm font-semibold text-gray-700">{phase.progress}%</span>
+                </div>
               </div>
             </div>
+          ))}
+        </div>
 
-            {typeof etapa.progresso === "number" && (
-              <div className="mt-3">
-                <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
-                  <div
-                    className="h-full bg-green-500 transition-all duration-500"
-                    style={{ width: `${etapa.progresso}%` }}
-                  />
-                </div>
-                <p className="text-right text-xs text-gray-500 mt-1">
-                  {etapa.progresso}%
-                </p>
-              </div>
-            )}
+        {/* Photo Gallery */}
+        <div className="border-t pt-6">
+          <div className="flex items-center justify-between mb-4">
+            <h4 className="text-lg font-semibold text-gray-800">Galeria de Fotos</h4>
+            <Button variant="outline" size="sm">
+              <Camera className="w-4 h-4 mr-2" />
+              Ver Todas
+            </Button>
           </div>
-        ))}
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {photos.map((photo, index) => (
+              <div key={index} className="group cursor-pointer">
+                <div className={`aspect-square rounded-xl bg-gradient-to-br ${photo.color} p-1 shadow-lg group-hover:shadow-xl transition-all duration-300`}>
+                  <div className="w-full h-full bg-white rounded-lg flex items-center justify-center relative overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-br from-gray-100 to-gray-200"></div>
+                    <Camera className="w-8 h-8 text-gray-400 z-10" />
+                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-3">
+                      <p className="text-white text-sm font-medium">{photo.title}</p>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Progress indicator */}
+                <div className="mt-2">
+                  <div className="w-full bg-gray-200 rounded-full h-1">
+                    <div 
+                      className={`h-1 rounded-full bg-gradient-to-r ${photo.color} transition-all duration-500`}
+                      style={{ width: `${photo.progress}%` }}
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </CardContent>
     </Card>
   );
