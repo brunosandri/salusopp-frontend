@@ -7,49 +7,49 @@ const ModernProjectTimeline = () => {
     { 
       id: 1, 
       completed: true, 
-      title: "Fase 0 - Compra do Terreno",
+      title: "1. Compra do Terreno",
       description: "Análise, negociação, documentos e registro Warranty Dead",
-      date: "21/02/2025 a 24/03/2025",
+      date: "24/03/2025",
       progress: 100
     },
     { 
       id: 2, 
       completed: true, 
-      title: "Fase 1 - Permits",
+      title: "2. Permits",
       description: "Site plan e licenças para construção",
-      date: "28/03/2025 a 11/06/2025",
+      date: "11/06/2025",
       progress: 100
     },
     { 
       id: 3, 
       completed: true, 
-      title: "Fase 2 - Fundação",
+      title: "3. Fundação",
       description: "Limpeza do lote, Escavação, Marcação e Concretagem",
-      date: "12/06/2025 a 12/08/2025 (previsão)",
+      date: "até 12/08/2025",
       progress: 40
     },
     { 
       id: 4, 
       completed: false, 
-      title: "Fase 3 - Telhado e Framing",
+      title: "4. Telhado e Framing",
       description: "Montagem telhado e Colocação das divisórias internas",
-      date: "13/08/2025 a 13/10/2025 (previsão)",
+      date: "até 13/10/2025",
       progress: 0
     },
     {
       id: 5, 
       completed: false, 
-      title: "Fase 4 - Rough-ins e Sistemas",
+      title: "5. Rough-ins e Sistemas",
       description: "Instalação de tubulações, Eletrica e Ar-condicionado",
-      date: "14/10/2025 a 14/12/2025 (previsão)",
+      date: "até 14/12/2025",
       progress: 0
     },
     {
       id: 6, 
       completed: false, 
-      title: "Fase 5 - Acabamentos e Encerramento",
+      title: "6. Acabamentos e Finalização",
       description: "Revestimentos e pintura, Instalação de Armários, calçada",
-      date: "14/12/2025 a 14/02/2026 (previsão)",
+      date: "até 14/02/2026",
       progress: 0
     }
 
