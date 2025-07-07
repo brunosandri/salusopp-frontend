@@ -12,12 +12,6 @@ type NFT = {
   participacao: string;
 };
 
-type Etapa = {
-  titulo: string;
-  descricao: string;
-  imagem?: string;
-};
-
 type Documento = {
   nome: string;
   url: string;
@@ -30,7 +24,6 @@ const Dashboard = () => {
   const [isNFTModalOpen, setIsNFTModalOpen] = useState(false);
 
   const [nfts, setNFTs] = useState<NFT[]>([]);
-  const [etapas, setEtapas] = useState<Etapa[]>([]);
   const [documentos, setDocumentos] = useState<Documento[]>([]);
 
   const BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
@@ -56,11 +49,6 @@ const Dashboard = () => {
     fetch(`${BASE_URL}/nfts/${encodeURIComponent(email)}`)
       .then((res) => res.json())
       .then(setNFTs)
-      .catch(console.error);
-
-    fetch(`${BASE_URL}/obra`)
-      .then((res) => res.json())
-      .then(setEtapas)
       .catch(console.error);
 
     fetch(`${BASE_URL}/documentos/${encodeURIComponent(email)}`)
@@ -144,7 +132,7 @@ const Dashboard = () => {
 
           {/* Obra */}
           <div className="xl:col-span-3">
-            <ModernProjectTimeline etapas={etapas} />
+            <ModernProjectTimeline />
           </div>
         </div>
 

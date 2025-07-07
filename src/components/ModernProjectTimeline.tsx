@@ -7,33 +7,58 @@ const ModernProjectTimeline = () => {
     { 
       id: 1, 
       completed: true, 
-      title: "Fundação",
-      description: "Preparação do terreno e fundação",
-      date: "Jan 2024",
+      title: "Fase 0 - Compra do Terreno",
+      description: "Análise, negociação, documentos e registro Warranty Dead",
+      date: "21/02/2025 a 24/03/2025",
       progress: 100
     },
     { 
       id: 2, 
       completed: true, 
-      title: "Estrutura",
-      description: "Construção da estrutura principal",
-      date: "Mar 2024",
-      progress: 85
+      title: "Fase 1 - Permits",
+      description: "Site plan e licenças para construção",
+      date: "28/03/2025 a 11/06/2025",
+      progress: 100
     },
     { 
       id: 3, 
+      completed: true, 
+      title: "Fase 2 - Fundação",
+      description: "Limpeza do lote, Escavação, Marcação e Concretagem",
+      date: "12/06/2025 a 12/08/2025 (previsão)",
+      progress: 40
+    },
+    { 
+      id: 4, 
       completed: false, 
-      title: "Acabamento",
-      description: "Acabamentos e detalhes finais",
-      date: "Jun 2024",
-      progress: 25
+      title: "Fase 3 - Telhado e Framing",
+      description: "Montagem telhado e Colocação das divisórias internas",
+      date: "13/08/2025 a 13/10/2025 (previsão)",
+      progress: 0
+    },
+    {
+      id: 5, 
+      completed: false, 
+      title: "Fase 4 - Rough-ins e Sistemas",
+      description: "Instalação de tubulações, Eletrica e Ar-condicionado",
+      date: "14/10/2025 a 14/12/2025 (previsão)",
+      progress: 0
+    },
+    {
+      id: 6, 
+      completed: false, 
+      title: "Fase 5 - Acabamentos e Encerramento",
+      description: "Revestimentos e pintura, Instalação de Armários, calçada",
+      date: "14/12/2025 a 14/02/2026 (previsão)",
+      progress: 0
     }
+
+
   ];
 
   const photos = [
-    { title: "Fundação Concluída", progress: 100, color: "from-green-400 to-green-600" },
-    { title: "Estrutura em Andamento", progress: 85, color: "from-blue-400 to-blue-600" },
-    { title: "Acabamento Inicial", progress: 25, color: "from-orange-400 to-orange-600" }
+    { title: "Limpeza do lote", progress: 100, color: "from-green-400 to-green-600" },
+    { title: "Armação e preparação para concretagem", progress: 100, color: "from-blue-400 to-blue-600" }
   ];
 
   return (
