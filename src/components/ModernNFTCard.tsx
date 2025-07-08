@@ -71,7 +71,7 @@ const ModernNFTCard = ({ tokenId, participacao, valorinv, valorcapt, imagem, sma
         <div className="space-y-4">
           <div>
             <h3 className="font-bold text-xl text-transparent bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text">
-              Salus NFT #{tokenId}
+              Salus//Opp NFT #{tokenId}
             </h3>
             <p className="text-blue-200 text-sm mt-1">Token ID #{tokenId}</p>
           </div>
