@@ -57,9 +57,9 @@ const ModernProjectTimeline = () => {
   ];
 
   const photos = [
-    { title: "Limpeza do lote", progress: 100, color: "from-green-400 to-green-600" },
-    { title: "Armação e preparação para concretagem", progress: 100, color: "from-blue-400 to-blue-600" }
-  ];
+    { title: "Limpeza do lote", progress: 100, color: "from-green-400 to-green-600", imagem: "https://magnificent-kleicha-fde726.netlify.app/imagens/cleanlot.jpg"},
+    { title: "elevação", progress: 100, color: "from-blue-400 to-blue-600" imagem: "https://magnificent-kleicha-fde726.netlify.app/imagens/elevationlot.jpg"}
+
 
   return (
     <Card className="bg-white shadow-xl border-0">
@@ -143,7 +143,10 @@ const ModernProjectTimeline = () => {
                 <div className={`aspect-square rounded-xl bg-gradient-to-br ${photo.color} p-1 shadow-lg group-hover:shadow-xl transition-all duration-300`}>
                   <div className="w-full h-full bg-white rounded-lg flex items-center justify-center relative overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-br from-gray-100 to-gray-200"></div>
-                    <Camera className="w-8 h-8 text-gray-400 z-10" />
+                    <img src={photo.imagem}
+                     alt={photo.title}
+                     className="w-full h-full object-cover rounded-lg"
+                    />
                     <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-3">
                       <p className="text-white text-sm font-medium">{photo.title}</p>
                     </div>
