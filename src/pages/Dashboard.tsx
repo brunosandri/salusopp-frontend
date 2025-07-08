@@ -10,6 +10,8 @@ import NFTLinkModal from "@/components/NFTLinkModal";
 type NFT = {
   tokenId: number;
   participacao: string;
+  valorinv: string;
+  valorcapt: string;
 };
 
 type Documento = {
@@ -126,6 +128,8 @@ const Dashboard = () => {
                 key={nft.tokenId}
                 tokenId={nft.tokenId}
                 participacao={nft.participacao}
+                valorinv={nft.valorinv}
+                valorcapt={nft.valorcapt}
                 imagem={`https://magnificent-kleicha-fde726.netlify.app/imagens/nftimagem.jpg`}
                 smartContractUrl="https://gold-pawpaw-0be.notion.site/SalusOppNFT-sol-229f529207c280d28ae4ca3bed602762?source=copy_link"
               />
