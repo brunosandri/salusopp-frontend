@@ -11,11 +11,13 @@ import { ExternalLink, Eye, Shield, Zap } from "lucide-react";
 type Props = {
   tokenId: number;
   participacao: string;
+  valorinv: string;
+  valorcapt: string;
   imagem?: string;
   smartContractUrl?: string;
 };
 
-const ModernNFTCard = ({ tokenId, participacao, imagem, smartContractUrl }: Props) => {
+const ModernNFTCard = ({ tokenId, participacao, valorinv, valorcapt, imagem, smartContractUrl }: Props) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -80,12 +82,12 @@ const ModernNFTCard = ({ tokenId, participacao, imagem, smartContractUrl }: Prop
               <span className="text-xl font-bold text-green-400">{participacao}</span>
             </div>
             <div className="flex justify-between items-center">
-              <span className="text-gray-300 text-sm">Valor Atual:</span>
-              <span className="text-lg font-semibold text-blue-300">–</span>
+              <span className="text-gray-300 text-sm">Valor investido:</span>
+              <span className="text-lg font-semibold text-blue-300">{valorinv}</span>
             </div>
             <div className="flex justify-between items-center">
-              <span className="text-gray-300 text-sm">Valorização:</span>
-              <span className="text-lg font-semibold text-green-400">–</span>
+              <span className="text-gray-300 text-sm">Valor captado projeto:</span>
+              <span className="text-lg font-semibold text-green-400">{valorcapt}</span>
             </div>
           </div>
 
