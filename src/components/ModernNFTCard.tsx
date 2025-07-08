@@ -87,7 +87,7 @@ const ModernNFTCard = ({ tokenId, participacao, valorinv, valorcapt, imagem, sma
             </div>
             <div className="flex justify-between items-center">
               <span className="text-gray-300 text-sm">Valor captado projeto:</span>
-              <span className="text-lg font-semibold text-green-400">{valorcapt}</span>
+              <span className="text-lg font-semibold text-blue-300">{valorcapt}</span>
             </div>
           </div>
 
