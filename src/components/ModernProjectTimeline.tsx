@@ -26,7 +26,7 @@ const ModernProjectTimeline = () => {
       title: "3. Fundação",
       description: "Limpeza do lote, Escavação, Marcação e Concretagem",
       date: "até 12/08/2025",
-      progress: 40
+      progress: 100
     },
     { 
       id: 4, 
@@ -58,7 +58,11 @@ const ModernProjectTimeline = () => {
 
   const photos = [
     { title: "Limpeza do lote", progress: 100, color: "from-green-400 to-green-600", imagem: "https://magnificent-kleicha-fde726.netlify.app/imagens/cleanlot.jpg"},
-    { title: "elevação", progress: 100, color: "from-blue-400 to-blue-600", imagem: "https://magnificent-kleicha-fde726.netlify.app/imagens/elevationlot.jpg"}];
+    { title: "elevação", progress: 100, color: "from-blue-400 to-blue-600", imagem: "https://magnificent-kleicha-fde726.netlify.app/imagens/elevationlot.jpg"},
+    { title: "concreto", progress: 100, color: "from-blue-400 to-blue-600", imagem: "https://magnificent-kleicha-fde726.netlify.app/imagens/1.png"},
+    { title: "alvenaria em bloco 01", progress: 100, color: "from-blue-400 to-blue-600", imagem: "https://magnificent-kleicha-fde726.netlify.app/imagens/2.png"},
+    { title: "alvenaria em bloco 02", progress: 100, color: "from-blue-400 to-blue-600", imagem: "https://magnificent-kleicha-fde726.netlify.app/imagens/3.png"},
+    { title: "alvenaria em bloco 03", progress: 100, color: "from-blue-400 to-blue-600", imagem: "https://magnificent-kleicha-fde726.netlify.app/imagens/4.png"}];
 
   return (
     <Card className="bg-white shadow-xl border-0">
