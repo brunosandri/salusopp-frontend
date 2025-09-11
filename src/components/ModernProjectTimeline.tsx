@@ -34,7 +34,7 @@ const ModernProjectTimeline = () => {
       title: "4. Telhado e Framing",
       description: "Montagem telhado e Colocação das divisórias internas",
       date: "até 13/10/2025",
-      progress: 0
+      progress: 45
     },
     {
       id: 5, 
