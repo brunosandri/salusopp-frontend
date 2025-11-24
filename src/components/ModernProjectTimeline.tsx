@@ -62,7 +62,15 @@ const ModernProjectTimeline = () => {
     { title: "concreto", progress: 100, color: "from-blue-400 to-blue-600", imagem: "https://magnificent-kleicha-fde726.netlify.app/imagens/1.png"},
     { title: "alvenaria em bloco 01", progress: 100, color: "from-blue-400 to-blue-600", imagem: "https://magnificent-kleicha-fde726.netlify.app/imagens/2.png"},
     { title: "alvenaria em bloco 02", progress: 100, color: "from-blue-400 to-blue-600", imagem: "https://magnificent-kleicha-fde726.netlify.app/imagens/3.png"},
-    { title: "alvenaria em bloco 03", progress: 100, color: "from-blue-400 to-blue-600", imagem: "https://magnificent-kleicha-fde726.netlify.app/imagens/4.png"}];
+    { title: "alvenaria em bloco 03", progress: 100, color: "from-blue-400 to-blue-600", imagem: "https://magnificent-kleicha-fde726.netlify.app/imagens/4.png"},
+    { title: "telhado em bloco 03", progress: 100, color: "from-blue-400 to-blue-600", imagem: "https://magnificent-kleicha-fde726.netlify.app/imagens/5.png"},
+    { title: "telhado em bloco 03", progress: 100, color: "from-blue-400 to-blue-600", imagem: "https://magnificent-kleicha-fde726.netlify.app/imagens/6.png"},
+    { title: "telhado em bloco 03", progress: 100, color: "from-blue-400 to-blue-600", imagem: "https://magnificent-kleicha-fde726.netlify.app/imagens/7.png"},
+    { title: "Rough-ins e Sistemas em bloco 04", progress: 100, color: "from-blue-400 to-blue-600", imagem: "https://magnificent-kleicha-fde726.netlify.app/imagens/8.png"},
+    { title: "Rough-ins e Sistemas em bloco 04", progress: 100, color: "from-blue-400 to-blue-600", imagem: "https://magnificent-kleicha-fde726.netlify.app/imagens/9.png"},
+    { title: "Rough-ins e Sistemas em bloco 04", progress: 100, color: "from-blue-400 to-blue-600", imagem: "https://magnificent-kleicha-fde726.netlify.app/imagens/10.png"},
+    { title: "Rough-ins e Sistemas em bloco 04", progress: 100, color: "from-blue-400 to-blue-600", imagem: "https://magnificent-kleicha-fde726.netlify.app/imagens/11.png"},     
+    { title: "Rough-ins e Sistemas em bloco 04", progress: 100, color: "from-blue-400 to-blue-600", imagem: "https://magnificent-kleicha-fde726.netlify.app/imagens/12.png"}];
 
   return (
     <Card className="bg-white shadow-xl border-0">
