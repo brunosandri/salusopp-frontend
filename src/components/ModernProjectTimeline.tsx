@@ -30,19 +30,19 @@ const ModernProjectTimeline = () => {
     },
     { 
       id: 4, 
-      completed: false, 
+      completed: true, 
       title: "4. Telhado e Framing",
       description: "Montagem telhado e Colocação das divisórias internas",
-      date: "até 13/10/2025",
-      progress: 45
+      date: "até 18/10/2025",
+      progress: 100
     },
     {
       id: 5, 
       completed: false, 
       title: "5. Rough-ins e Sistemas",
       description: "Instalação de tubulações, Eletrica e Ar-condicionado",
-      date: "até 14/12/2025",
-      progress: 0
+      date: "até 19/12/2025",
+      progress: 65
     },
     {
       id: 6, 
