@@ -38,11 +38,11 @@ const ModernProjectTimeline = () => {
     },
     {
       id: 5, 
-      completed: false, 
+      completed: true, 
       title: "5. Rough-ins e Sistemas",
       description: "Instalação de tubulações, Eletrica e Ar-condicionado",
       date: "até 19/12/2025",
-      progress: 65
+      progress: 100
     },
     {
       id: 6, 
@@ -50,7 +50,7 @@ const ModernProjectTimeline = () => {
       title: "6. Acabamentos e Finalização",
       description: "Revestimentos e pintura, Instalação de Armários, calçada",
       date: "até 14/02/2026",
-      progress: 0
+      progress: 45
     }
 
 
