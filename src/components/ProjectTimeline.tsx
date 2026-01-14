@@ -7,7 +7,7 @@ const ProjectTimeline = () => {
     { id: 2, completed: true },
     { id: 3, completed: true },
     { id: 4, completed: true },
-    { id: 5, completed: false },
+    { id: 5, completed: true },
     { id: 6, completed: false }
   ];
 
