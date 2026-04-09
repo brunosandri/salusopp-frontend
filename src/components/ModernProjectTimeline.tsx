@@ -50,7 +50,7 @@ const ModernProjectTimeline = () => {
       title: "6. Acabamentos e Finalização",
       description: "Revestimentos e pintura, Instalação de Armários, calçada",
       date: "até 14/02/2026",
-      progress: 45
+      progress: 100
     }
 
 
@@ -75,7 +75,8 @@ const ModernProjectTimeline = () => {
     { title: "Rough-ins e Sistemas em bloco 04", progress: 100, color: "from-blue-400 to-blue-600", imagem: "https://magnificent-kleicha-fde726.netlify.app/imagens/14.png"},
     { title: "Rough-ins e Sistemas em bloco 05", progress: 100, color: "from-blue-400 to-blue-600", imagem: "https://magnificent-kleicha-fde726.netlify.app/imagens/15.png"},
     { title: "Rough-ins e Sistemas em bloco 05", progress: 100, color: "from-blue-400 to-blue-600", imagem: "https://magnificent-kleicha-fde726.netlify.app/imagens/16.png"},     
-    { title: "Rough-ins e Sistemas em bloco 05", progress: 100, color: "from-blue-400 to-blue-600", imagem: "https://magnificent-kleicha-fde726.netlify.app/imagens/17.png"}];
+    { title: "Rough-ins e Sistemas em bloco 05", progress: 100, color: "from-blue-400 to-blue-600", imagem: "https://magnificent-kleicha-fde726.netlify.app/imagens/17.png"},
+    { title: "Construction finishing touches em bloco 06", progress: 100, color: "from-blue-400 to-blue-600", imagem: ];
 
   return (
     <Card className="bg-white shadow-xl border-0">
