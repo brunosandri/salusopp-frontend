@@ -76,7 +76,14 @@ const ModernProjectTimeline = () => {
     { title: "Rough-ins e Sistemas em bloco 05", progress: 100, color: "from-blue-400 to-blue-600", imagem: "https://magnificent-kleicha-fde726.netlify.app/imagens/15.png"},
     { title: "Rough-ins e Sistemas em bloco 05", progress: 100, color: "from-blue-400 to-blue-600", imagem: "https://magnificent-kleicha-fde726.netlify.app/imagens/16.png"},     
     { title: "Rough-ins e Sistemas em bloco 05", progress: 100, color: "from-blue-400 to-blue-600", imagem: "https://magnificent-kleicha-fde726.netlify.app/imagens/17.png"},
-    { title: "Construction finishing touches em bloco 06", progress: 100, color: "from-blue-400 to-blue-600", imagem: ];
+    { title: "Construction finishing touches em bloco 06", progress: 100, color: "from-blue-400 to-blue-600", imagem: "https://magnificent-kleicha-fde726.netlify.app/imagens/18.png"},
+    { title: "Construction finishing touches em bloco 06", progress: 100, color: "from-blue-400 to-blue-600", imagem: "https://magnificent-kleicha-fde726.netlify.app/imagens/19.png"},
+    { title: "Construction finishing touches em bloco 06", progress: 100, color: "from-blue-400 to-blue-600", imagem: "https://magnificent-kleicha-fde726.netlify.app/imagens/20.png"},
+    { title: "Construction finishing touches em bloco 06", progress: 100, color: "from-blue-400 to-blue-600", imagem: "https://magnificent-kleicha-fde726.netlify.app/imagens/21.png"},
+    { title: "Construction finishing touches em bloco 06", progress: 100, color: "from-blue-400 to-blue-600", imagem: "https://magnificent-kleicha-fde726.netlify.app/imagens/22.png"},
+    { title: "Construction finishing touches em bloco 06", progress: 100, color: "from-blue-400 to-blue-600", imagem: "https://magnificent-kleicha-fde726.netlify.app/imagens/23.png"},
+    { title: "Construction finishing touches em bloco 06", progress: 100, color: "from-blue-400 to-blue-600", imagem: "https://magnificent-kleicha-fde726.netlify.app/imagens/24.png"},
+    { title: "Construction finishing touches em bloco 06", progress: 100, color: "from-blue-400 to-blue-600", imagem: "https://magnificent-kleicha-fde726.netlify.app/imagens/25.png"}];
 
   return (
     <Card className="bg-white shadow-xl border-0">
