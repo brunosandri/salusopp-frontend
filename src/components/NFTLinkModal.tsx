@@ -3,11 +3,12 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { Zap } from "lucide-react";
+import { API_BASE_URL } from "@/lib/api";
 
 type Props = {
   isOpen: boolean;
   onClose: () => void;
-  onSuccess?: () => void; // recarregar NFTs no painel após vínculo
+  onSuccess?: () => void;
 };
 
 const NFTLinkModal = ({ isOpen, onClose, onSuccess }: Props) => {
@@ -16,7 +17,6 @@ const NFTLinkModal = ({ isOpen, onClose, onSuccess }: Props) => {
   const [mensagem, setMensagem] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
   const email = localStorage.getItem("email");
 
   const handleSubmit = async () => {
@@ -29,14 +29,14 @@ const NFTLinkModal = ({ isOpen, onClose, onSuccess }: Props) => {
     setMensagem("");
 
     try {
-      const res = await fetch(`${BASE_URL}/vincular-nft`, {
+      const res = await fetch(`${API_BASE_URL}/vincular-nft`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           email,
-          tokenId: parseInt(tokenId),
-          participacao
-        })
+          tokenId: Number.parseInt(tokenId, 10),
+          participacao,
+        }),
       });
 
       const data = await res.json();
@@ -45,11 +45,11 @@ const NFTLinkModal = ({ isOpen, onClose, onSuccess }: Props) => {
         setMensagem("NFT vinculado com sucesso!");
         setTokenId("");
         setParticipacao("");
-        onSuccess?.(); // chama o refresh no Dashboard
+        onSuccess?.();
       } else {
         setMensagem(data.error || "Erro ao vincular NFT.");
       }
-    } catch (err) {
+    } catch {
       setMensagem("Erro de conexão com o servidor.");
     } finally {
       setLoading(false);

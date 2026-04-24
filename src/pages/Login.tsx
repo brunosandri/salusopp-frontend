@@ -10,18 +10,22 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { API_BASE_URL } from "@/lib/api";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [erro, setErro] = useState("");
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
+    setErro("");
+    setLoading(true);
 
     try {
-      const res = await fetch("https://salusopp-backend-production.up.railway.app/login", {
+      const res = await fetch(`${API_BASE_URL}/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
@@ -34,11 +38,13 @@ const Login = () => {
         localStorage.setItem("email", email);
         navigate("/dashboard");
       } else {
-        setErro("Email ou senha inválidos.");
+        setErro(data?.error || "Email ou senha inválidos.");
       }
     } catch (error) {
       console.error("Erro ao conectar com o backend:", error);
       setErro("Erro ao conectar com o servidor.");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -80,8 +86,8 @@ const Login = () => {
               <p className="text-sm text-red-600 text-center">{erro}</p>
             )}
 
-            <Button type="submit" className="w-full">
-              Entrar
+            <Button type="submit" className="w-full" disabled={loading}>
+              {loading ? "Entrando..." : "Entrar"}
             </Button>
           </form>
         </CardContent>
