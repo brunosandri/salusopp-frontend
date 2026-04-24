@@ -47,9 +47,9 @@ const ModernProjectTimeline = () => {
     {
       id: 6, 
       completed: true, 
-      title: "6. Acabamentos e Finalização",
+      title: "6. Construction finishing touches",
       description: "Revestimentos e pintura, Instalação de Armários, calçada",
-      date: "até 14/02/2026",
+      date: "até 14/03/2026",
       progress: 100
     }
 
