@@ -14,7 +14,7 @@ const Index = () => {
         <p className="text-lg text-gray-600">
           Acompanhe seus ativos, obras em andamento e documentos de forma segura e profissional.
         </p>
-        <Button onClick={() => navigate("/")} className="mt-4 px-8 py-2">
+        <Button onClick={() => navigate("/login")} className="mt-4 px-8 py-2">
           Acessar Login
         </Button>
       </div>

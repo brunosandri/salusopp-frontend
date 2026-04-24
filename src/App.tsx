@@ -7,7 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import NotFound from "./pages/NotFound";
-// import Index from "./pages/Index"; // Se quiser ativar home institucional
+import Index from "./pages/Index";
 
 const queryClient = new QueryClient();
 
@@ -18,14 +18,9 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          {/* Página inicial (opcional) */}
-          {/* <Route path="/" element={<Index />} /> */}
-
-          {/* Login e Painel */}
-          <Route path="/" element={<Login />} />
+          <Route path="/" element={<Index />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/dashboard" element={<Dashboard />} />
-
-          {/* Rota padrão para erros */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
