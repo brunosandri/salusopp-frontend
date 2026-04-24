@@ -46,7 +46,7 @@ const ModernProjectTimeline = () => {
     },
     {
       id: 6, 
-      completed: false, 
+      completed: true, 
       title: "6. Acabamentos e Finalização",
       description: "Revestimentos e pintura, Instalação de Armários, calçada",
       date: "até 14/02/2026",
